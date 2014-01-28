@@ -1,0 +1,5 @@
+mpd_crossfade_time = 1
+mpd_music_dir = "~/Music/"
+mpd_playlist_directory = "~/Music/Playlists/"
+progressbar_color = "red"
+song_list_format = "{$2%a - $9}{$4%t$9}|{$5%f$9}$R{$5 | %l$9}"
