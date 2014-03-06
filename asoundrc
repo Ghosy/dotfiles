@@ -1,1 +1,67 @@
-/home/ghosy/backup/dotfiles/asoundrc
+pcm.!default {
+	type asym
+	playback.pcm {
+		type plug
+		slave.pcm "dmixed"
+	}
+	capture.pcm {
+		type plug
+		slave.pcm "dsnooped"
+	}
+}
+
+pcm.dmixed {
+	type dmix
+	ipc_key 1024
+	slave {
+		pcm {
+			type hw
+			card DS
+		}
+		period_time 0
+		period_size 1024
+		buffer_size 4096
+		rate 44100
+	}
+	bindings {
+		0 0
+		1 1
+	}
+}
+
+ctl.dmixed {
+	type hw
+	card DS
+}
+
+pcm.dsnooped {
+	type dsnoop
+	ipc_key 1025
+	slave {
+		pcm {
+			type hw
+			card DS
+		}
+		channels 2
+		periods 0
+		period_time 0
+		period_size 1024
+		buffer_size 4096
+		rate 44100
+	}
+	bindings {
+		0 0
+		0 1
+	}
+}
+
+pcm.rate_convert {
+	type plug
+	slave {
+		pcm {
+			type hw
+			card CA0106
+		}
+		rate 48000
+	}
+}

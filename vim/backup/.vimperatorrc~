@@ -16,7 +16,7 @@ set cpt=l
 """""--------------------------------------------------------------------}
 """""Keybinds------------------------------------------------------------{
 
-nm \l :noscript popup<CR>
+nm <Leader> l :noscript popup<CR>
 nm <S-j> :tabprevious<CR>
 nm <S-k> :tabnext<CR>
 let mapleader = ","

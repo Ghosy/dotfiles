@@ -30,6 +30,8 @@ focus_follows_mouse no
 
 workspace_auto_back_and_forth no
 
+client.focused #15E831 #15E831 #ffffff #2E9EF4
+
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 

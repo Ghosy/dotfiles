@@ -1,1 +1,17 @@
-/home/ghosy/backup/dotfiles/Xmodmap
+remove lock =         Caps_Lock
+remove lock =         Escape
+keycode 66 =         BackSpace        BackSpace        Escape
+keycode 22 =         Caps_Lock
+keycode 108 =         Mode_switch         Multi_key
+keycode 47 =         s                 S                 U015D                 U015C
+keycode 31 =         c                 C                 U0109                 U0108
+keycode 30 =         g                 G                 U011D                 U011C
+keycode 44 =         h                 H                 U0125                 U0124
+keycode 54 =         j                 J                 U0135                 U0134
+keycode 41 =         u                 U                 U016D                 U016C
+keycode 39 =         o                 O                 parenleft
+keycode 40 =         e                 E                 parenright
+keycode 24 =         apostrophe         quotedbl         bracketleft
+keycode 25 =         comma                 less                 braceleft
+keycode 26 =         period                 greater         braceright
+keycode 27 =         p                 P                 bracketright
