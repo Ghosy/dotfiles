@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Title: Vimrc                                                 ""
 "" Author: Ghosy                                                ""
-"" Source: https://github.com/Ghosy/dotfiles/blob/master/vimrc  ""
+"" Source: http://goo.gl/JKMIyI                                 ""
 """"Plugins---------{                                           ""
 """"--Vundle                                                    ""
 """"--NERDTree                                                  ""
@@ -12,12 +12,21 @@
 """"--Surround                                                  ""
 """"--Solarized (Color Scheme)                                  ""
 """"--Eclim                                                     ""
+""""--Emmet-Vim                                                 ""
+""""--Syntastic                                                 ""
 """"----------------}                                           ""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""Initial-----------------------------------------------------{
 
-"startup for vundle
+"If vundle is not installed, do it first
+if (!isdirectory(expand("$HOME/.vim/bundle/vundle")))
+    call system(expand("mkdir -p $HOME/.vim/bundle"))
+    call system(expand("git clone git@github.com:gmarik/vundle $HOME/.vim/bundle/vundle"))
+    echoerr 'Vundle was freshly installed. You should run :BundleInstall'
+endif
+
+"Startup for vundle
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -31,6 +40,8 @@ Bundle 'tomtom/tcomment_vim'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-surround'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'mattn/emmet-vim'
+Bundle 'scrooloose/syntastic'
 
 """""------------------------------------------------------------}
 """""Appearance--------------------------------------------------{
@@ -45,7 +56,7 @@ if has('syntax')
 	endif
 endif
 set background=dark "Sets the background of the colorscheme to dark
-set number "Sets the line numbers visable
+set nu "Sets the line numbers visable
 set cmdheight=2 "Sets the space at the bottom of the terminal 2 characters high
 set cul " Highlights current line
 set showmatch " Shows matching bracket
@@ -84,24 +95,19 @@ nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
 nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
 nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
 "Disables the arrow keys in normal and insert mode
-inoremap  <Up>     <NOP>
-inoremap  <Down>   <NOP>
-inoremap  <Left>   <NOP>
-inoremap  <Right>  <NOP>
+"Reenabled arrow keys in insert mode because of arrow location on Ergodox
 noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 "Easier Writes
-nmap <c-s> :w<CR>
-vmap <c-s> <Esc><c-s>gv
-imap <c-s> <Esc><c-s>
-
-inoremap <silent><F5> :call SpellToggle()<CR>
-map <silent><F5> :call SpellToggle()<CR>
-
-nnoremap <space> <c-f>
-nnoremap <space> <c-b>
+nmap <leader>. :w<CR>
+"Toggles number mode
+nmap <leader>n :call NuToggle()<CR>
+"Easier quits
+nmap <leader>p :q<CR>
+"Toggles spell checker
+nmap <leader>s :call SpellToggle()<CR>
 """""------------------------------------------------------------}
 """""Saving/Backup-----------------------------------------------{
 
@@ -184,5 +190,15 @@ function SpellToggle()
     endif
 endfunction
 
+"""""""----------------------------------------------------------}
+"""""""Number Toggle---------------------------------------------{
+
+function NuToggle()
+	if &rnu == 0
+		set rnu " Only changes relative to maintain absolute number on current line.
+	else
+		set nornu
+	endif
+endfunction
 """""""----------------------------------------------------------}
 """""------------------------------------------------------------}
