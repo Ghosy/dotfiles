@@ -14,6 +14,9 @@
 """"--Eclim                                                     ""
 """"--Emmet-Vim                                                 ""
 """"--Syntastic                                                 ""
+""""--SnipMate                                                  ""
+""""--MatchIt                                                   ""
+""""--Vim-LaTeX Suite                                           ""
 """"----------------}                                           ""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -29,7 +32,7 @@ endif
 "Startup for vundle
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 
 "Installs bundles
@@ -42,6 +45,10 @@ Bundle 'tpope/vim-surround'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'vim-scripts/matchit.zip'
 
 """""------------------------------------------------------------}
 """""Appearance--------------------------------------------------{
@@ -102,18 +109,21 @@ noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 "Easier Writes
 nmap <leader>. :w<CR>
+nmap <leader>> :w!<CR>
 "Toggles number mode
 nmap <leader>n :call NuToggle()<CR>
 "Easier quits
 nmap <leader>p :q<CR>
+nmap <leader>P :q!<CR>
 "Toggles spell checker
 nmap <leader>s :call SpellToggle()<CR>
+let g:ConqueGdb_Print = "g:ConqueGdb_Leader . 'q'"
 """""------------------------------------------------------------}
 """""Saving/Backup-----------------------------------------------{
 
 set backup
-set backupdir=~/.vim/backup "Sets backup directory outside of local directory
-set directory=~/.vim/tmp "Sets temp directory outside of local directory
+set backupdir=$HOME/.vim/backup "Sets backup directory outside of local directory
+set directory=$HOME/.vim/tmp "Sets temp directory outside of local directory
 set autoread "Watch for file changes
 
 """""------------------------------------------------------------}
@@ -128,6 +138,12 @@ set smartcase "Pays attention to caps you add only
 set clipboard=unnamedplus " Allows for use of the system clipboard in Unix-based systems
 set paste
 set spelllang=en_us
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
+set grepprg=grep\ -nH\ $*
+highlight ColorColumn ctermbg=240 ctermfg=244
+highlight SpellBad cterm=underline ctermbg=196 ctermfg=white
+call matchadd('ColorColumn', '\%81v', 100)
 
 """""------------------------------------------------------------}
 """""Functions---------------------------------------------------{
