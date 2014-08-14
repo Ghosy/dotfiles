@@ -89,7 +89,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -157,17 +157,32 @@ mode "resize" {
 
 bindsym $mod+n mode "resize"
 
-bindsym $mod+i exec urxvt -name irc -e ssh ghosy@ghosy.net -t tmux a -t irc
+mode "focus" {
+        bindsym a [class="^Dwb$"] focus; mode "default"
+        bindsym o [class="^TeamSpeak 3$"] focus; mode "default"
+        bindsym e [instance="^irc$"] focus; mode "default"
+        bindsym u [instance="^music$"] focus; mode "default"
+        bindsym n [class="^Steam$" title="^Steam$"] focus; mode "default"
+        bindsym s [class="^Steam$" title=" - Chat$"] focus; mode "default"
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+a mode "focus"
+
+bindsym $mod+i exec urxvt -name irc -e ssh ghosy@ghosy.net -t tmux -L irc a
 bindsym $mod+m exec urxvt -name music -e ncmpcpp
-bindsym $mod+z exec bash /home/ghosy/LiSpeak-master/hotkey
+bindsym $mod+z exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/ghosy/.i3/workspace-1.json; workspace 2; append_layout /home/ghosy/.i3/workspace-2.json; workspace 3; append_layout /home/ghosy/.i3/workspace-3.json; workspace 5; append_layout /home/ghosy/.i3/workspace-5.json'''"
 
 for_window [instance="^float$"] floating enable
 for_window [title="QUAKE LIVE Launcher" class="Wine"] floating enable
 for_window [class="Steam" title="Settings"] floating enable
-assign [class="^URxvt$" instance="^irc$"] 5
-assign [class="^URxvt$" instance="^music$"] 2
-# assign [class="^Teamspeak 3$"] 2
-# assign [class= "Steam" instance="Chat"] 2
+# Now the job of layouts
+# assign [class="^URxvt$" instance="^irc$"] 5
+# assign [class="^URxvt$" instance="^music$"] 2
+# assign [class="^Teamspea 3$"] 2
+# assign [class= "Steam" title="^- Chat$"] 2
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

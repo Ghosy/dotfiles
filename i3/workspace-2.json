@@ -1,0 +1,74 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "floating": "auto_off",
+            "geometry": {
+               "height": 546,
+               "width": 816,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Ncmpcpp",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^URxvt$",
+                "instance": "^music$",
+                "title": "^*$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "none",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 24,
+               "width": 64,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Steam Chat",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Steam$",
+                "instance": "^Steam$",
+                "title": "// //-// Chat$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1022,
+       "width": 638,
+       "x": 3840,
+       "y": 0
+    },
+    "name": "TeamSpeak 3",
+    "percent": 0.5,
+    "swallows": [
+       {
+        "class": "^TeamSpeak\\ 3$",
+        "instance": "^ts3client_linux_x86$",
+        "title": "^TeamSpeak\\ 3$"
+       }
+    ],
+    "type": "con"
+}
+

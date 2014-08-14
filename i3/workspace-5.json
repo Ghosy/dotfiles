@@ -1,0 +1,22 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "floating": "auto_off",
+    "geometry": {
+       "height": 546,
+       "width": 816,
+       "x": 0,
+       "y": 0
+    },
+    "name": "ssh",
+    "percent": 1,
+    "swallows": [
+       {
+        "class": "^URxvt$",
+        "instance": "^irc$",
+        "title": "^*$"
+       }
+    ],
+    "type": "con"
+}
+
