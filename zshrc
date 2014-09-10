@@ -25,6 +25,7 @@ alias irc-vpn="ssh ghosy@ghosy.net -t tmux a -t irc"
 
 alias -g L="| less -rM"
 alias -g G="| grep -E --color=auto"
+alias -g DING="&& play -qn synth .2 pluck C3 repeat vol .5 || play -qn synth .2 pluck C2 repeat vol .5"
 
 alias auras="\sudo aura -S"
 alias auraa="\sudo aura -A"

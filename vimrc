@@ -17,6 +17,7 @@
 """"--SnipMate                                                  ""
 """"--MatchIt                                                   ""
 """"--Vim-LaTeX Suite                                           ""
+""""--YouCompleteMe                                             ""
 """"----------------}                                           ""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -138,8 +139,13 @@ set smartcase "Pays attention to caps you add only
 set clipboard=unnamedplus " Allows for use of the system clipboard in Unix-based systems
 set paste
 set spelllang=en_us
+set smartindent
+set autoindent
+set wildmode=longest,list,full
+set wildmenu
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
+let g:EclimCompletionMethod = 'omnifunc'
 set grepprg=grep\ -nH\ $*
 highlight ColorColumn ctermbg=240 ctermfg=244
 highlight SpellBad cterm=underline ctermbg=196 ctermfg=white
