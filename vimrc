@@ -2,7 +2,7 @@
 "" Title: Vimrc                                                 ""
 "" Author: Ghosy                                                ""
 "" Source: http://goo.gl/JKMIyI                                 ""
-""""Plugins---------{                                           ""
+""""Plugins--------- {{{                                        ""
 """"--Vundle                                                    ""
 """"--NERDTree                                                  ""
 """"--Buftabs                                                   ""
@@ -18,10 +18,10 @@
 """"--MatchIt                                                   ""
 """"--Vim-LaTeX Suite                                           ""
 """"--YouCompleteMe                                             ""
-""""----------------}                                           ""
+""""---------------- }}}                                        ""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"""""Initial-----------------------------------------------------{
+"""""Initial-----------------------------------------------------{{{
 
 "If vundle is not installed, do it first
 if (!isdirectory(expand("$HOME/.vim/bundle/vundle")))
@@ -51,8 +51,8 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'vim-scripts/matchit.zip'
 
-"""""------------------------------------------------------------}
-"""""Appearance--------------------------------------------------{
+"""""------------------------------------------------------------}}}
+"""""Appearance--------------------------------------------------{{{
 
 colorscheme solarized "Sets colorscheme
 filetype plugin indent on "Turns on indenting and plugins for specific filetypes
@@ -74,8 +74,8 @@ set hlsearch "Highlights the term searched
 set foldtext=MyFoldText() "Sets template for foldtext
 set viewoptions=cursor,folds,slash,unix "Saves view info for reloading later
 
-"""""------------------------------------------------------------}
-"""""Keybinds----------------------------------------------------{
+"""""------------------------------------------------------------}}}
+"""""Keybinds----------------------------------------------------{{{
 
 "Maps leader to ,
 let mapleader=","
@@ -119,21 +119,21 @@ nmap <leader>P :q!<CR>
 "Toggles spell checker
 nmap <leader>s :call SpellToggle()<CR>
 let g:ConqueGdb_Print = "g:ConqueGdb_Leader . 'q'"
-"""""------------------------------------------------------------}
-"""""Saving/Backup-----------------------------------------------{
+"""""------------------------------------------------------------}}}
+"""""Saving/Backup-----------------------------------------------{{{
 
 set backup
 set backupdir=$HOME/.vim/backup "Sets backup directory outside of local directory
 set directory=$HOME/.vim/tmp "Sets temp directory outside of local directory
 set autoread "Watch for file changes
 
-"""""------------------------------------------------------------}
-"""""Other/Unsorted----------------------------------------------{
+"""""------------------------------------------------------------}}}
+"""""Other/Unsorted----------------------------------------------{{{
 
 set lazyredraw "Redraw only when it has to
 set undolevels=1000 "1000 undos
 set ttyfast "Gotta go fast
-set foldmethod=manual
+set foldmethod=marker
 set ignorecase "Ignores caps in searches
 set smartcase "Pays attention to caps you add only
 set clipboard=unnamedplus " Allows for use of the system clipboard in Unix-based systems
@@ -151,9 +151,9 @@ highlight ColorColumn ctermbg=240 ctermfg=244
 highlight SpellBad cterm=underline ctermbg=196 ctermfg=white
 call matchadd('ColorColumn', '\%81v', 100)
 
-"""""------------------------------------------------------------}
-"""""Functions---------------------------------------------------{
-"""""""Highlight Word--------------------------------------------{
+"""""------------------------------------------------------------}}}
+"""""Functions---------------------------------------------------{{{
+"""""""Highlight Word--------------------------------------------{{{
 "
 " This mini-plugin provides a few mappings for highlighting words temporarily.
 "
@@ -185,8 +185,8 @@ hi def InterestingWord3 guifg=#000000 ctermfg=16 guibg=#8cffba ctermbg=121
 hi def InterestingWord4 guifg=#000000 ctermfg=16 guibg=#b88853 ctermbg=137
 hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#ff9eb8 ctermbg=211
 hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
-"""""""----------------------------------------------------------}
-"""""""FoldText--------------------------------------------------{
+"""""""----------------------------------------------------------}}}
+"""""""FoldText--------------------------------------------------{{{
 
 function! MyFoldText()
     let line = getline(v:foldstart)
@@ -201,8 +201,8 @@ function! MyFoldText()
     return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
 endfunction 
 
-"""""""----------------------------------------------------------}
-"""""""Spell Toggle----------------------------------------------{
+"""""""----------------------------------------------------------}}}
+"""""""Spell Toggle----------------------------------------------{{{
 
 function SpellToggle()
     if &spell == 1
@@ -212,8 +212,8 @@ function SpellToggle()
     endif
 endfunction
 
-"""""""----------------------------------------------------------}
-"""""""Number Toggle---------------------------------------------{
+"""""""----------------------------------------------------------}}}
+"""""""Number Toggle---------------------------------------------{{{
 
 function NuToggle()
 	if &rnu == 0
@@ -222,5 +222,5 @@ function NuToggle()
 		set nornu
 	endif
 endfunction
-"""""""----------------------------------------------------------}
-"""""------------------------------------------------------------}
+"""""""----------------------------------------------------------}}}
+"""""------------------------------------------------------------}}}
