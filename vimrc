@@ -73,6 +73,9 @@ set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮ "Defines characters for 
 set hlsearch "Highlights the term searched
 set foldtext=MyFoldText() "Sets template for foldtext
 set viewoptions=cursor,folds,slash,unix "Saves view info for reloading later
+set tabstop=8 "Length TAB's appear to be
+set shiftwidth=8 "Width of an indent
+set softtabstop=8 "Sets number of columns for a TAB
 
 """""------------------------------------------------------------}}}
 """""Keybinds----------------------------------------------------{{{
