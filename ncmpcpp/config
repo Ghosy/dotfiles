@@ -16,9 +16,13 @@ song_list_format = "{$2%a - $9}{$4%t$9}|{$5%f$9}$R{$5 | %l$9}"
 playlist_display_mode = "columns"
 browser_display_mode = "columns"
 search_engine_display_mode = "columns"
+jump_to_now_playing_song_at_start = "yes"
 #display_screens_numbers_on_start = "no"
 
 # Color Definitions
 colors_enabled = "yes"
 progressbar_color = "white"
 volume_color = "green"
+
+# Other
+ask_before_clearing_playlists = "no"
