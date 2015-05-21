@@ -4,20 +4,19 @@
 "" Source: http://goo.gl/JKMIyI                                 ""
 """"Plugins--------- {{{                                        ""
 """"--Vundle                                                    ""
-""""--NERDTree                                                  ""
 """"--Buftabs                                                   ""
 """"--Restore_View                                              ""
 """"--TComment                                                  ""
-""""--SuperTab                                                  ""
 """"--Surround                                                  ""
 """"--Solarized (Color Scheme)                                  ""
 """"--Eclim                                                     ""
 """"--Emmet-Vim                                                 ""
 """"--Syntastic                                                 ""
-""""--SnipMate                                                  ""
 """"--MatchIt                                                   ""
 """"--Vim-LaTeX Suite                                           ""
 """"--YouCompleteMe                                             ""
+""""--CtrlP                                                     ""
+""""--EasyMotion                                                ""
 """"---------------- }}}                                        ""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -41,15 +40,14 @@ Bundle 'gmarik/vundle'
 Bundle 'buftabs'
 Bundle 'restore_view.vim'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-surround'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
 Bundle 'vim-scripts/matchit.zip'
+Bundle 'kien/ctrlp.vim'
+Bundle 'sirver/ultisnips'
+Bundle 'Lokaltog/vim-easymotion'
 
 """""------------------------------------------------------------}}}
 """""Appearance--------------------------------------------------{{{
@@ -63,6 +61,8 @@ if has('syntax')
 		set t_Co=16
 	endif
 endif
+set smartindent "Adds indent levels in some C-like files
+set autoindent "Maintains current indent level
 set background=dark "Sets the background of the colorscheme to dark
 set nu "Sets the line numbers visable
 set cmdheight=2 "Sets the space at the bottom of the terminal 2 characters high
@@ -121,7 +121,10 @@ nmap <leader>p :q<CR>
 nmap <leader>P :q!<CR>
 "Toggles spell checker
 nmap <leader>s :call SpellToggle()<CR>
-let g:ConqueGdb_Print = "g:ConqueGdb_Leader . 'q'"
+
+let g:UltiSnipsExpandTrigger = "<C-i>"
+
+" let g:UltiSnipsExpandTrigger="<c-n>"
 """""------------------------------------------------------------}}}
 """""Saving/Backup-----------------------------------------------{{{
 
@@ -139,16 +142,15 @@ set ttyfast "Gotta go fast
 set foldmethod=marker
 set ignorecase "Ignores caps in searches
 set smartcase "Pays attention to caps you add only
-set clipboard=unnamedplus " Allows for use of the system clipboard in Unix-based systems
+set clipboard=unnamedplus "Allows for use of the system clipboard in Unix-based systems
 set paste
 set spelllang=en_us
-set smartindent
-set autoindent
 set wildmode=longest,list,full
 set wildmenu
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:EclimCompletionMethod = 'omnifunc'
+let g:ctrlp_working_path_mode = 'ra'
 set grepprg=grep\ -nH\ $*
 highlight ColorColumn ctermbg=240 ctermfg=244
 highlight SpellBad cterm=underline ctermbg=196 ctermfg=white

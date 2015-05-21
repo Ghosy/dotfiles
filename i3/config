@@ -30,6 +30,7 @@ focus_follows_mouse no
 
 workspace_auto_back_and_forth no
 
+# lock workspaces to correct screens
 workspace 1 output xinerama-0
 workspace 2 output xinerama-2
 workspace 3 output xinerama-0
@@ -171,13 +172,15 @@ mode "focus" {
 
 bindsym $mod+a mode "focus"
 
-bindsym $mod+i exec urxvt -name irc -e ssh ghosy@ghosy.net -t tmux -L irc a
+bindsym $mod+i exec urxvt -name irc -e ssh ghosy@ghosy.net -t tmux a -t irc
 bindsym $mod+m exec urxvt -name music -e ncmpcpp
 bindsym $mod+z exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/ghosy/.i3/workspace-1.json; workspace 2; append_layout /home/ghosy/.i3/workspace-2.json; workspace 3; append_layout /home/ghosy/.i3/workspace-3.json; workspace 5; append_layout /home/ghosy/.i3/workspace-5.json'''"
+bindsym $mod+q exec keepass --auto-type
 
 for_window [instance="^float$"] floating enable
 for_window [title="QUAKE LIVE Launcher" class="Wine"] floating enable
 for_window [class="Steam" title="Settings"] floating enable
+for_window [title="Euro Truck Simulator 2"] floating enable
 # Now the job of layouts
 # assign [class="^URxvt$" instance="^irc$"] 5
 # assign [class="^URxvt$" instance="^music$"] 2

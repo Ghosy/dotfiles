@@ -6,23 +6,27 @@ mpd_music_dir = "~/Music/"
 #mpd_playlist_directory = "~/Music/Playlists/"
 mpd_crossfade_time = 0
 
+# Behaviour
 mouse_support = "no"
 external_editor = "vim"
 use_console_editor = "yes"
+ask_before_clearing_playlists = "no"
 
 # Appearance
 progressbar_look="─⊙╶"
 song_list_format = "{$2%a - $9}{$4%t$9}|{$5%f$9}$R{$5 | %l$9}"
+song_columns_list_format = "(35)[yellow]{a} (7)[blue]{nE} (50)[white]{t} (8)[magenta]{l}"
+#song_status_format = ""
 playlist_display_mode = "columns"
 browser_display_mode = "columns"
 search_engine_display_mode = "columns"
 jump_to_now_playing_song_at_start = "yes"
-#display_screens_numbers_on_start = "no"
+autocenter_mode = "yes"
+#display_screens_numbers_on_start = "no" Broken or removed
+user_interface = "classic"
+header_visibility = "yes"
 
 # Color Definitions
 colors_enabled = "yes"
 progressbar_color = "white"
 volume_color = "green"
-
-# Other
-ask_before_clearing_playlists = "no"

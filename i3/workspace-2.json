@@ -43,7 +43,7 @@
                {
                 "class": "^Steam$",
                 "instance": "^Steam$",
-                "title": "\\ -\\ Chat$"
+                "title": "^\\ -\\ Chat$"
                }
             ],
             "type": "con"
