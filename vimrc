@@ -24,9 +24,9 @@
 
 "If vundle is not installed, do it first
 if (!isdirectory(expand("$HOME/.vim/bundle/vundle")))
-    call system(expand("mkdir -p $HOME/.vim/bundle"))
-    call system(expand("git clone git@github.com:gmarik/vundle $HOME/.vim/bundle/vundle"))
-    echoerr 'Vundle was freshly installed. You should run :BundleInstall'
+	call system(expand("mkdir -p $HOME/.vim/bundle"))
+	call system(expand("git clone git@github.com:gmarik/vundle $HOME/.vim/bundle/vundle"))
+	echoerr 'Vundle was freshly installed. You should run :BundleInstall'
 endif
 
 "Startup for vundle
@@ -122,9 +122,8 @@ nmap <leader>P :q!<CR>
 "Toggles spell checker
 nmap <leader>s :call SpellToggle()<CR>
 
-let g:UltiSnipsExpandTrigger = "<C-i>"
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
-" let g:UltiSnipsExpandTrigger="<c-n>"
 """""------------------------------------------------------------}}}
 """""Saving/Backup-----------------------------------------------{{{
 
@@ -168,20 +167,20 @@ call matchadd('ColorColumn', '\%81v', 100)
 " a number from 1-6 to highlight the current word in a specific color.
 
 function! HiInterestingWord(n)
-    " Save our location.
-    normal! mz
-    " Yank the current word into the z register.
-    normal! "zyiw
-    " Calculate an arbitrary match ID.  Hopefully nothing else is using it.
-    let mid = 86750 + a:n
-    " Clear existing matches, but don't worry if they don't exist.
-    silent! call matchdelete(mid)
-    " Construct a literal pattern that has to match at boundaries.
-    let pat = '\V\<' . escape(@z, '\') . '\>'
-    " Actually match the words.
-    call matchadd("InterestingWord" . a:n, pat, 1, mid)
-    " Move back to our original location.
-    normal! `z
+	" Save our location.
+	normal! mz
+	" Yank the current word into the z register.
+	normal! "zyiw
+	" Calculate an arbitrary match ID.  Hopefully nothing else is using it.
+	let mid = 86750 + a:n
+	" Clear existing matches, but don't worry if they don't exist.
+	silent! call matchdelete(mid)
+	" Construct a literal pattern that has to match at boundaries.
+	let pat = '\V\<' . escape(@z, '\') . '\>'
+	" Actually match the words.
+	call matchadd("InterestingWord" . a:n, pat, 1, mid)
+	" Move back to our original location.
+	normal! `z
 endfunction
 
 hi def InterestingWord1 guifg=#000000 ctermfg=16 guibg=#ffa724 ctermbg=214
@@ -194,27 +193,27 @@ hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
 """""""FoldText--------------------------------------------------{{{
 
 function! MyFoldText()
-    let line = getline(v:foldstart)
-    let nucolwidth = &fdc + &number * &numberwidth
-    let windowwidth = winwidth(0) - nucolwidth - 3
-    let foldedlinecount = v:foldend - v:foldstart
-    " expand tabs into spaces
-    let onetab = strpart('          ', 0, &tabstop)
-    let line = substitute(line, '\t', onetab, 'g')
-    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
-    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+	let line = getline(v:foldstart)
+	let nucolwidth = &fdc + &number * &numberwidth
+	let windowwidth = winwidth(0) - nucolwidth - 3
+	let foldedlinecount = v:foldend - v:foldstart
+	" expand tabs into spaces
+	let onetab = strpart('          ', 0, &tabstop)
+	let line = substitute(line, '\t', onetab, 'g')
+	let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+	let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
+	return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
 endfunction 
 
 """""""----------------------------------------------------------}}}
 """""""Spell Toggle----------------------------------------------{{{
 
 function SpellToggle()
-    if &spell == 1
-        set nospell
-    else
-        set spell
-    endif
+	if &spell == 1
+		set nospell
+	else
+		set spell
+	endif
 endfunction
 
 """""""----------------------------------------------------------}}}
@@ -226,6 +225,27 @@ function NuToggle()
 	else
 		set nornu
 	endif
+endfunction
+"""""""----------------------------------------------------------}}}
+"""""""Ultisnips Fix---------------------------------------------{{{
+
+" UltiSnips completion function that tries to expand a snippet. If there's no
+" snippet for expanding, it checks for completion window and if it's
+" shown, selects first element. If there's no completion window it tries to
+" jump to next placeholder. If there's no placeholder it just returns TAB key 
+function! g:UltiSnips_Complete()
+	call UltiSnips_ExpandSnippet()
+	if g:ulti_expand_res == 0
+		if pumvisible()
+			return "\<C-n>"
+		else
+			call UltiSnips_JumpForwards()
+			if g:ulti_jump_forwards_res == 0
+				return "\<TAB>"
+			endif
+		endif
+	endif
+	return ""
 endfunction
 """""""----------------------------------------------------------}}}
 """""------------------------------------------------------------}}}
