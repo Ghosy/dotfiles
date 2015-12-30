@@ -193,7 +193,7 @@ bar {
 	mode hide
 		modifier $mod
 		tray_output primary
-		status_command i3status -c .i3status.conf
+		status_command i3status
 		colors {
 			background #002b36
 				statusline #93a1a1
