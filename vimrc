@@ -61,6 +61,7 @@ if has('syntax')
 		set t_Co=16
 	endif
 endif
+set encoding=utf-8
 set smartindent "Adds indent levels in some C-like files
 set autoindent "Maintains current indent level
 set background=dark "Sets the background of the colorscheme to dark
