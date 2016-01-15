@@ -1,4 +1,6 @@
 vimperator/info/
-vim/backup/
-vim/tmp/
-vim/view/
+vim/backup/*
+vim/bundle/*
+vim/tmp/*
+vim/view/*
+!.gitignore
