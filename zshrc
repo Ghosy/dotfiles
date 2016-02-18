@@ -40,6 +40,8 @@ alias sv="\sudo -E =vim"
 alias eu="cd .."
 alias a="=ls -pF --color"
 alias aa="\ls -pFA --color"
+alias au="\ls -pFlh --color"
+alias aua="\ls -pFAlh --color"
 alias o="\vifm"
 alias k="\tree"
 

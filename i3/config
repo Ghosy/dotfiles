@@ -175,7 +175,6 @@ bindsym $mod+a mode "focus"
 bindsym $mod+i exec urxvt -name irc -e ssh ghosy@ghosy.net -t tmux a -t irc
 bindsym $mod+m exec urxvt -name music -e ncmpcpp
 bindsym $mod+z exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/ghosy/.i3/workspace-1.json; workspace 2; append_layout /home/ghosy/.i3/workspace-2.json; workspace 3; append_layout /home/ghosy/.i3/workspace-3.json; workspace 5; append_layout /home/ghosy/.i3/workspace-5.json'''"
-bindsym $mod+q exec keepass --auto-type
 
 for_window [instance="^float$"] floating enable
 for_window [title="QUAKE LIVE Launcher" class="Wine"] floating enable
