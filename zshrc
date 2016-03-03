@@ -26,24 +26,33 @@ alias -g L="| less -rM"
 alias -g G="| grep -E --color=auto"
 alias -g DING="&& play -qn synth .2 pluck C3 repeat vol .5 || play -qn synth .2 pluck C2 repeat vol .5"
 
-alias auras="\sudo aura -S"
-alias auraa="\sudo aura -A"
-alias aurar="\sudo aura -R"
-alias aurasyu="\sudo aura -Syu"
-alias auraayu="\sudo aura -Ayu"
-alias auraqi="aura -Qi"
+if [[ -x =aura ]]; then
+	alias auras="\sudo aura -S"
+	alias auraa="\sudo aura -A"
+	alias aurar="\sudo aura -R"
+	alias aurasyu="\sudo aura -Syu"
+	alias auraayu="\sudo aura -Ayu"
+	alias auraqi="aura -Qi"
+fi
 
 alias s="\sudo "
 #alias ss="\sudo BANG BANG DAMMIT!"
-alias v="\vim"
-alias sv="\sudo -E =vim"
+if [[ -x =vim ]]; then
+	alias v="\vim"
+	alias sv="\sudo -E =vim"
+else
+	alias v="\vi"
+	alias sv"\sudo -E =vi"
+fi
 alias eu="cd .."
 alias a="=ls -pF --color"
 alias aa="\ls -pFA --color"
 alias au="\ls -pFlh --color"
 alias aua="\ls -pFAlh --color"
-alias o="\vifm"
-alias k="\tree"
+
+if [[ -x =vifm ]]; then
+	alias o="\vifm"
+fi
 
 #remove once you've changed your habit.
 alias vim="echo 'Please use v.'"
@@ -53,3 +62,19 @@ alias sudo="echo 'Please use s.'"
 
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
+# Set default pager to less
+export PAGER="less"
+# Assign parameters to less
+export LESS="-isM"
+
+SAVEHIST=10000
+HISTSIZE=10000
+
+# Non-case sensitive globbing
+setopt NO_CASE_GLOB
+# Better globbing
+setopt EXTENDED_GLOB
+# Don't overwrite history append
+setopt APPEND_HISTORY
+# Don't record same command repeated directly after another
+setopt HIST_IGNORE_DUPS
