@@ -18,8 +18,6 @@ export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 
 alias ssh="TERM=screen-256color ssh"
 
-#alias steamwine="WINEPREFIX=~/.local/share/wineprefixes/steam/ wine ~/.local/share/wineprefixes/steam/drive_c/Program\ Files/Steam/Steam.exe"
-#alias quakelive="WINEPREFIX=~/.local/share/wineprefixes/Quakelive/ wine ~/.local/share/wineprefixes/Quakelive/drive_c/Program\ Files/Quake\ Live/Launcher.exe"
 alias irc-vpn="ssh ghosy@ghosy.net -t tmux a -t irc"
 
 alias -g L="| less -rM"
@@ -37,6 +35,7 @@ fi
 
 alias s="\sudo "
 #alias ss="\sudo BANG BANG DAMMIT!"
+
 if [[ -x =vim ]]; then
 	alias v="\vim"
 	alias sv="\sudo -E =vim"
@@ -44,6 +43,7 @@ else
 	alias v="\vi"
 	alias sv"\sudo -E =vi"
 fi
+
 alias eu="cd .."
 alias a="=ls -pF --color"
 alias aa="\ls -pFA --color"
@@ -54,7 +54,7 @@ if [[ -x =vifm ]]; then
 	alias o="\vifm"
 fi
 
-#remove once you've changed your habit.
+# Remove once you've changed your habit.
 alias vim="echo 'Please use v.'"
 alias ls="echo 'Please use a.'"
 alias vifm="echo 'Please use o.'"
@@ -67,6 +67,7 @@ export PAGER="less"
 # Assign parameters to less
 export LESS="-isM"
 
+# History length
 SAVEHIST=10000
 HISTSIZE=10000
 
