@@ -24,7 +24,7 @@ alias -g L="| less -rM"
 alias -g G="| grep -E --color=auto"
 alias -g DING="&& play -qn synth .2 pluck C3 repeat vol .5 || play -qn synth .2 pluck C2 repeat vol .5"
 
-if [[ -x =aura ]]; then
+if [ hash aura 2>/dev/null ]; then
 	alias auras="\sudo aura -S"
 	alias auraa="\sudo aura -A"
 	alias aurar="\sudo aura -R"
@@ -36,7 +36,7 @@ fi
 alias s="\sudo "
 #alias ss="\sudo BANG BANG DAMMIT!"
 
-if [[ -x =vim ]]; then
+if [ hash vim 2>/dev/null ]; then
 	alias v="\vim"
 	alias sv="\sudo -E =vim"
 else
@@ -50,7 +50,7 @@ alias aa="\ls -pFA --color"
 alias au="\ls -pFlh --color"
 alias aua="\ls -pFAlh --color"
 
-if [[ -x =vifm ]]; then
+if [ hash vifm 2>/dev/null ]; then
 	alias o="\vifm"
 fi
 
