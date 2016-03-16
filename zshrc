@@ -34,7 +34,7 @@ if hash aura 2>/dev/null; then
 fi
 
 alias s="\sudo "
-#alias ss="\sudo BANG BANG DAMMIT!"
+alias ss='\sudo $(fc -ln -1)'
 
 if hash vim 2>/dev/null; then
 	alias v="\vim"
