@@ -54,12 +54,6 @@ if hash vifm 2>/dev/null; then
 	alias o="\vifm"
 fi
 
-# Remove once you've changed your habit.
-alias vim="echo 'Please use v.'"
-alias ls="echo 'Please use a.'"
-alias vifm="echo 'Please use o.'"
-alias sudo="echo 'Please use s.'"
-
 zle -N zle-keymap-select
 export KEYTIMEOUT=1
 # Set default pager to less
