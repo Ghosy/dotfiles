@@ -1,4 +1,9 @@
 pcm.!default {
+	type plug
+	slave.pcm "integrated"
+}
+
+pcm.integrated {
 	type asym
 	playback.pcm {
 		type plug
@@ -16,7 +21,7 @@ pcm.dmixed {
 	slave {
 		pcm {
 			type hw
-			card DS
+			card PCH
 		}
 		period_time 0
 		period_size 1024
@@ -31,7 +36,7 @@ pcm.dmixed {
 
 ctl.dmixed {
 	type hw
-	card DS
+	card PCH
 }
 
 pcm.dsnooped {
@@ -40,7 +45,7 @@ pcm.dsnooped {
 	slave {
 		pcm {
 			type hw
-			card DS
+			card PCH
 		}
 		channels 2
 		periods 0
@@ -52,16 +57,5 @@ pcm.dsnooped {
 	bindings {
 		0 0
 		0 1
-	}
-}
-
-pcm.rate_convert {
-	type plug
-	slave {
-		pcm {
-			type hw
-			card CA0106
-		}
-		rate 48000
 	}
 }
