@@ -60,6 +60,12 @@ export KEYTIMEOUT=1
 export PAGER="less"
 # Assign parameters to less
 export LESS="-isM"
+# Set default editor to vim if it exists
+if hash vim 2>/dev/null; then
+	export EDITOR="vim"
+else
+	export EDITOR="vi"
+fi
 
 # History length
 SAVEHIST=10000
