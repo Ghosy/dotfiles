@@ -79,3 +79,5 @@ setopt EXTENDED_GLOB
 setopt APPEND_HISTORY
 # Don't record same command repeated directly after another
 setopt HIST_IGNORE_DUPS
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
