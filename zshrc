@@ -14,7 +14,9 @@ fi
 source ~/.zplug/init.zsh
 
 	zplug "plugins/colored-man-pages", from:oh-my-zsh
-	zplug zsh-users/zsh-syntax-highlighting
+	zplug "zsh-users/zsh-syntax-highlighting"
+	zplug "zsh-users/zsh-completions"
+	zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
