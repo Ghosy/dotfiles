@@ -3,3 +3,5 @@
 	name = Ghosy
 [push]
 	default = simple
+[core]
+	pager = less -r
