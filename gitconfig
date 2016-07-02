@@ -5,3 +5,6 @@
 	default = simple
 [core]
 	pager = less -r
+	editor = vim
+[color]
+	ui = true
