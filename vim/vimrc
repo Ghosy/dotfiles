@@ -45,7 +45,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sirver/ultisnips'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
+Plug 'mmai/vim-markdown-wiki'
 """""""YCM Install-----------------------------------------------{{{
 " Found on http://www.adamwadeharris.com
 function! BuildYCM(info)
@@ -163,7 +164,8 @@ set grepprg=grep\ -nH\ $*
 highlight ColorColumn ctermbg=240 ctermfg=244
 highlight SpellBad cterm=underline ctermbg=196 ctermfg=white
 call matchadd('ColorColumn', '\%81v', 100)
-let g:vimwiki_list = [{'path':'~/Documents/wiki', 'path_html':'~/Documents/wiki/export/html/'}]
+" let g:vimwiki_list = [{"path":'~/Documents/wiki', "path_html":'~/Documents/wiki/export/html/', "syntax": 'markdown', "ext": '.md', "css_file": 'style.css', "custom_wiki2html": '~/Documents/wiki/tools/misaka_md2html.py', "auto_export": 1}]
+" let g:vimwiki_list = [{"path":'~/Documents/wiki', "path_html":'~/Documents/wiki/export/html/', "ext": '.md', "css_file": 'style.css', "auto_export": 1}]
 
 """""------------------------------------------------------------}}}
 """""Functions---------------------------------------------------{{{
