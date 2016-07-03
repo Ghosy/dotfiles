@@ -16,7 +16,8 @@ source ~/.zplug/init.zsh
 	zplug "plugins/colored-man-pages", from:oh-my-zsh
 	zplug "zsh-users/zsh-syntax-highlighting"
 	zplug "zsh-users/zsh-completions"
-	zplug "junegunn/fzf-bin", from:gh-r, as:command, rename-to:fzf
+	zplug "junegunn/fzf", use:"shell/*.zsh"
+	zplug "junegunn/fzf", use:"shell/key-bindings.zsh"
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
@@ -97,3 +98,6 @@ setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Ensure emacs keybindings are working in terminal
+bindkey -e
