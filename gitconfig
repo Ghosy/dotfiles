@@ -1,0 +1,10 @@
+[user]
+	email = zacharymatt5@gmail.com
+	name = Ghosy
+[push]
+	default = simple
+[core]
+	pager = less -r
+	editor = vim
+[color]
+	ui = true

@@ -1,4 +1,5 @@
 vimperator/info/
+vim/autoload/*
 vim/backup/*
 vim/bundle/*
 vim/tmp/*

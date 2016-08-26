@@ -180,15 +180,18 @@ bindsym $mod+z exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/gh
 bindsym $mod+Next exec setxkbmap -layout ru
 bindsym $mod+Prior exec setxkbmap -layout us
 
+# Laptop Fn-keys
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 2.5%+
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 2.5%-
+bindsym XF86AudioMute exec amixer -q sset Master toggle
+bindsym XF86AudioMicMute exec amixer -q sset Mic toggle
+
 for_window [instance="^float$"] floating enable
 for_window [title="QUAKE LIVE Launcher" class="Wine"] floating enable
 for_window [class="Steam" title="Settings"] floating enable
 for_window [title="Euro Truck Simulator 2"] floating enable
-# Now the job of layouts
-# assign [class="^URxvt$" instance="^irc$"] 5
-# assign [class="^URxvt$" instance="^music$"] 2
-# assign [class="^Teamspea 3$"] 2
-# assign [class= "Steam" title="^- Chat$"] 2
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
