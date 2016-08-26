@@ -79,3 +79,9 @@ setopt EXTENDED_GLOB
 setopt APPEND_HISTORY
 # Don't record same command repeated directly after another
 setopt HIST_IGNORE_DUPS
+
+PATH="/home/ghosy/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/ghosy/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/ghosy/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/ghosy/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/ghosy/perl5"; export PERL_MM_OPT;
