@@ -132,6 +132,8 @@ nmap <leader>p :q<CR>
 nmap <leader>P :q!<CR>
 "Toggles spell checker
 nmap <leader>s :call SpellToggle()<CR>
+"Toggle fold method
+nmap <Leader>f :call <SID>ToggleFold()<CR>
 
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
@@ -258,6 +260,20 @@ function! g:UltiSnips_Complete()
 		endif
 	endif
 	return ""
+endfunction
+"""""""----------------------------------------------------------}}}
+"""""""Toggle Fold-----------------------------------------------{{{
+
+"Credit to idbrii
+"http://stackoverflow.com/questions/3776117/what-is-the-difference-between-the-remap-noremap-nnoremap-and-vnoremap-mapping
+
+function! s:ToggleFold()
+    if &foldmethod == 'marker'
+        let &l:foldmethod = 'syntax'
+    else
+        let &l:foldmethod = 'marker'
+    endif
+    echo 'foldmethod is now ' . &l:foldmethod
 endfunction
 """""""----------------------------------------------------------}}}
 
