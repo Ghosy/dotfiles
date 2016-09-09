@@ -1,9 +1,6 @@
-# i3 config file (v4)
+# i3 config file
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-#
-# This config file uses keycodes (bindsym) and was written for the QWERTY
-# layout.
 #
 # To get a config file with the same key positions, but for your current
 # layout, use the i3-config-wizard
@@ -89,12 +86,6 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-#bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -121,8 +112,10 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -139,9 +132,7 @@ bindsym --release Shift+Print -no-startup-id exec shoot
 mode "resize" {
 # These bindings trigger as soon as you enter the resize mode
 
-# Pressing up will shrink the window’s height.
-# Pressing down will grow the window’s height.
-	bindsym h           resize shrink width 10 px or 10 ppt
+		bindsym h           resize shrink width 10 px or 10 ppt
 		bindsym j           resize grow height 10 px or 10 ppt
 		bindsym k           resize shrink height 10 px or 10 ppt
 		bindsym l           resize grow width 10 px or 10 ppt
@@ -158,6 +149,7 @@ mode "resize" {
 
 bindsym $mod+n mode "resize"
 
+# Binds to easily jump to different windows
 mode "focus" {
 	bindsym a [class="^Dwb$"] focus; mode "default"
 		bindsym o [class="^TeamSpeak 3$"] focus; mode "default"
