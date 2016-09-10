@@ -172,6 +172,9 @@ bindsym $mod+z exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/gh
 bindsym $mod+Next exec setxkbmap -layout ru
 bindsym $mod+Prior exec setxkbmap -layout us
 
+# Add dmenu esperanto dictionary
+bindsym $mod+p exec dmenu_eo
+
 # Laptop Fn-keys
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
