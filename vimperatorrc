@@ -9,7 +9,9 @@
 
 """""Settings----------------------------------------------------{{{
 
-"Sets default search to startpage
+" Sets simple title string
+set titlestring="Firefox"
+" Sets default search to startpage
 set defsearch=startpage
 set cpt=l
 " Don't auto jump to first input box
@@ -22,6 +24,10 @@ set gui=none,tabs
 set ignorecase
 " Unless uppercase
 set smartcase
+" No x's on tabs
+set! browser.tabs.closeButtons=2
+" No animations on fullscreen
+set! browser.fullscreen.animateUp=0
 
 
 """""------------------------------------------------------------}}}
