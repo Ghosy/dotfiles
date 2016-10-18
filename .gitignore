@@ -4,6 +4,7 @@ vim/backup/*
 vim/bundle/*
 vim/tmp/*
 vim/view/*
+vimperator/info/*
 !.gitignore
 
 .netrwhist
