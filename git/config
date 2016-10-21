@@ -6,5 +6,8 @@
 [core]
 	pager = less -r
 	editor = vim
+	excludesfile = ~/.config/git/gitignore_global
 [color]
 	ui = true
+[diff]
+	tool = vimdiff
