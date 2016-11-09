@@ -181,7 +181,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 2.5%+
 bindsym XF86AudioLowerVolume exec amixer -q sset Master 2.5%-
 bindsym XF86AudioMute exec amixer -q sset Master toggle
-bindsym XF86AudioMicMute exec amixer -q sset Mic toggle
+bindsym XF86AudioMicMute exec amixer -q set Capture toggle
 
 for_window [instance="^float$"] floating enable
 for_window [title="QUAKE LIVE Launcher" class="Wine"] floating enable
