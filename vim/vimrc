@@ -155,7 +155,6 @@ set foldmethod=marker
 set ignorecase "Ignores caps in searches
 set smartcase "Pays attention to caps you add only
 set clipboard=unnamedplus "Allows for use of the system clipboard in Unix-based systems
-set paste
 set spelllang=en_us
 set wildmode=longest,list,full
 set wildmenu
