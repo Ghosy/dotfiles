@@ -135,7 +135,7 @@ nmap <leader>s :call SpellToggle()<CR>
 "Toggle fold method
 nmap <Leader>f :call <SID>ToggleFold()<CR>
 
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+"au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
 """""------------------------------------------------------------}}}
 """""Saving/Backup-----------------------------------------------{{{
