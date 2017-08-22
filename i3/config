@@ -15,9 +15,6 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
 
-# auto-start
-exec mpd
-
 set $mod Mod4
 
 new_window 1pixel 
