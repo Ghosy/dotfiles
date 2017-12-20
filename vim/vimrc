@@ -99,8 +99,6 @@ map H ^
 map L $
 "Unbinds help from F1
 map <F1> :echo<CR>
-"Opens/closes NERDTree
-map <F2> :NERDTreeToggle<CR>
 "Easier buffer movement
 noremap <F3> :bprev<CR>
 noremap <F4> :bnext<CR>
