@@ -5,6 +5,7 @@ vim/bundle/*
 vim/tmp/*
 vim/view/*
 vimperator/info/*
+ncmpcpp/error.log
 !.gitignore
 
 .netrwhist
