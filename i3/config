@@ -148,13 +148,8 @@ bindsym $mod+m exec urxvt -name music -e ncmpcpp
 bindsym $mod+z exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/ghosy/.i3/workspace-1.json; workspace 2; append_layout /home/ghosy/.i3/workspace-2.json; workspace 3; append_layout /home/ghosy/.i3/workspace-3.json; workspace 5; append_layout /home/ghosy/.i3/workspace-5.json'''"
 
 # Should write bash script to toggle more easily
-<<<<<<< HEAD
 bindsym $mod+Prior exec setxkbmap -layout us
 bindsym $mod+Next exec setxkbmap -layout dvorak
-=======
-bindsym $mod+Next exec setxkbmap -layout ru
-bindsym $mod+Prior exec setxkbmap -layout dvorak
->>>>>>> 21d11e814dd0c637912d3be3816824f264d6804c
 
 # Add dmenu esperanto dictionary
 bindsym $mod+p exec dmenu_eo
