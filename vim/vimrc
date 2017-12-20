@@ -75,11 +75,11 @@ set encoding=utf-8
 set smartindent "Adds indent levels in some C-like files
 set autoindent "Maintains current indent level
 set background=dark "Sets the background of the colorscheme to dark
-set nu "Sets the line numbers visable
+set nu "Sets the line numbers visible
 set cmdheight=2 "Sets the space at the bottom of the terminal 2 characters high
 set cul " Highlights current line
 set showmatch " Shows matching bracket
-set list "Makes whitespace characters visable
+set list "Makes whitespace characters visible
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮ "Defines characters for whitespace
 set hlsearch "Highlights the term searched
 set foldtext=MyFoldText() "Sets template for foldtext
@@ -116,6 +116,8 @@ nnoremap <silent> <leader>3 :call HiInterestingWord(3)<cr>
 nnoremap <silent> <leader>4 :call HiInterestingWord(4)<cr>
 nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
 nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
+"Bind for appending modeline
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 "Disables the arrow keys in normal and insert mode
 "Reenabled arrow keys in insert mode because of arrow location on Ergodox
 noremap   <Up>     <NOP>
@@ -135,7 +137,7 @@ nmap <leader>s :call SpellToggle()<CR>
 "Toggle fold method
 nmap <Leader>f :call <SID>ToggleFold()<CR>
 
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+"au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
 """""------------------------------------------------------------}}}
 """""Saving/Backup-----------------------------------------------{{{
@@ -273,6 +275,17 @@ function! s:ToggleFold()
         let &l:foldmethod = 'marker'
     endif
     echo 'foldmethod is now ' . &l:foldmethod
+endfunction
+"""""""----------------------------------------------------------}}}
+"""""""Modeline Append-------------------------------------------{{{
+" Append modeline after last line in buffer.
+" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
+" files.
+function! AppendModeline()
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :",
+        \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(line("$"), l:modeline)
 endfunction
 """""""----------------------------------------------------------}}}
 

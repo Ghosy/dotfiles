@@ -1,4 +1,4 @@
-# i3 config file
+#https://i.imgur.com/YDBpSvh.gif/ i3 config file
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 #
@@ -14,9 +14,6 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # chose a FreeType font, such as:
 # font pango:DejaVu Sans Mono 10
 
-# auto-start
-exec mpd
-
 set $mod Mod4
 
 new_window 1pixel 
@@ -28,10 +25,10 @@ workspace_auto_back_and_forth no
 
 # lock workspaces to correct screens
 workspace 1 output xinerama-0
-workspace 2 output xinerama-1
+workspace 2 output xinerama-2
 workspace 3 output xinerama-0
 workspace 4 output xinerama-0
-workspace 5 output xinerama-2
+workspace 5 output xinerama-1
 
 client.focused #15E831 #15E831 #ffffff #2E9EF4
 
@@ -122,10 +119,8 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+d exec i3lock -c 000000
 
 # screenshot whole screen
-bindsym --release Print exec -no-startup-id shoot2
+bindsym --release Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
 
-# screenshot selected section
-bindsym --release Shift+Print -no-startup-id exec shoot
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -153,8 +148,13 @@ bindsym $mod+m exec urxvt -name music -e ncmpcpp
 bindsym $mod+z exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/ghosy/.i3/workspace-1.json; workspace 2; append_layout /home/ghosy/.i3/workspace-2.json; workspace 3; append_layout /home/ghosy/.i3/workspace-3.json; workspace 5; append_layout /home/ghosy/.i3/workspace-5.json'''"
 
 # Should write bash script to toggle more easily
+<<<<<<< HEAD
 bindsym $mod+Prior exec setxkbmap -layout us
 bindsym $mod+Next exec setxkbmap -layout dvorak
+=======
+bindsym $mod+Next exec setxkbmap -layout ru
+bindsym $mod+Prior exec setxkbmap -layout dvorak
+>>>>>>> 21d11e814dd0c637912d3be3816824f264d6804c
 
 # Add dmenu esperanto dictionary
 bindsym $mod+p exec dmenu_eo
