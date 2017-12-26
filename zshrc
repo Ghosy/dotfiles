@@ -126,7 +126,7 @@ export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 # Prompt --------------------------------------------------------- {{{
 
 PROMPT='%m%# '
-RPROMPT='$(git_ahead_origin)$(git_ahead_origin)$(git_uncommited)$(git_branch)'
+RPROMPT='$(git_behind_origin)$(git_ahead_origin)$(git_uncommited)$(git_branch)'
 
 # Check that the current dir is in a git repo
 git_check() {
@@ -151,15 +151,15 @@ git_uncommited() {
 
 git_ahead_origin() {
 	git_check
-	if [ $(git rev-list --count master...origin) -gt 0 ]; then
-		echo -e "\u2192:$(git rev-list --count master...origin) "
+	if [ "$(git rev-list origin..HEAD | wc -l)" -gt 0 ]; then
+		echo -e "\u2192$(git rev-list origin..HEAD | wc -l) "
 	fi
 }
 
 git_behind_origin() {
 	git_check
-	if [ $(git rev-list --count origin...master) -gt 0 ]; then
-		echo -e "\u2190$(git rev-list --count orgin...master) "
+	if [ "$(git rev-list HEAD..origin | wc -l)" -gt 0 ]; then
+		echo -e "\u2190$(git rev-list HEAD..origin | wc -l) "
 	fi
 }
 
