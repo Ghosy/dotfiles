@@ -138,28 +138,28 @@ git_check() {
 # Output the current branch
 git_branch() {
 	git_check
-	git branch | awk '/^*/ {print $2}'
+	git branch 2>/dev/null | awk '/^*/ {print $2}'
 }
 
 # Output a character if there are uncommited changes
 git_uncommited() {
 	git_check
-	if [ ! -z "$(git status --untracked-files=no --porcelain)" ]; then
+	if [ ! -z "$(git status --untracked-files=no --porcelain 2>/dev/null)" ]; then
 		echo -e "\u00B1"
 	fi
 }
 
 git_ahead_origin() {
 	git_check
-	if [ "$(git rev-list origin..HEAD | wc -l)" -gt 0 ]; then
-		echo -e "\u2192$(git rev-list origin..HEAD | wc -l) "
+	if [ "$(git rev-list origin..HEAD 2>/dev/null | wc -l)" -gt 0 ]; then
+		echo -e "\u2192$(git rev-list origin..HEAD 2>/dev/null | wc -l) "
 	fi
 }
 
 git_behind_origin() {
 	git_check
-	if [ "$(git rev-list HEAD..origin | wc -l)" -gt 0 ]; then
-		echo -e "\u2190$(git rev-list HEAD..origin | wc -l) "
+	if [ "$(git rev-list HEAD..origin 2>/dev/null | wc -l)" -gt 0 ]; then
+		echo -e "\u2190$(git rev-list HEAD..origin 2>/dev/null | wc -l) "
 	fi
 }
 
