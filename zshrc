@@ -165,7 +165,7 @@ git_behind_origin() {
 
 ssh_check()
 	if [[ -n $SSH_CONNECTION ]]; then
-		echo "\u260D "
+		echo "\u21CC "
 	fi
 
 # ---------------------------------------------------------------- }}}
