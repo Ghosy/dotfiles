@@ -153,7 +153,7 @@ bindsym $mod+Next exec setxkbmap -layout dvorak
 
 # Add dmenu esperanto dictionary
 bindsym $mod+p exec dmenu_eo
-bindsym $mod+Shift+p exec dmenu_eo -a
+bindsym $mod+Shift+p exec dmenu_eo -m
 
 # Laptop Fn-keys
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
