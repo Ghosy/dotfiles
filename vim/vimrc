@@ -45,7 +45,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sirver/ultisnips'
 Plug 'Lokaltog/vim-easymotion'
-" Plug 'vimwiki/vimwiki'
 Plug 'mmai/vim-markdown-wiki'
 """""""YCM Install-----------------------------------------------{{{
 " Found on http://www.adamwadeharris.com
@@ -87,6 +86,11 @@ set viewoptions=cursor,folds,slash,unix "Saves view info for reloading later
 set tabstop=8 "Length TAB's appear to be
 set shiftwidth=8 "Width of an indent
 set softtabstop=8 "Sets number of columns for a TAB
+
+" Easy motion highlighting colors, which work with solarized
+hi link EasyMotionTarget Search
+hi link EasyMotionTarget2First Search
+hi link EasyMotionTarget2Second Search
 
 """""------------------------------------------------------------}}}
 """""Keybinds----------------------------------------------------{{{
