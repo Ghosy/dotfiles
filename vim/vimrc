@@ -45,7 +45,6 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sirver/ultisnips'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'mmai/vim-markdown-wiki'
 """""""YCM Install-----------------------------------------------{{{
 " Found on http://www.adamwadeharris.com
 function! BuildYCM(info)
