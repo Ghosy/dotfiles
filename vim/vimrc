@@ -3,21 +3,20 @@
 "" Author: Ghosy                                                ""
 "" Source: http://goo.gl/JKMIyI                                 ""
 """"Plugins--------- {{{                                        ""
-""""--Vundle                                                    ""
 """"--Buftabs                                                   ""
-""""--Restore_View                                              ""
-""""--TComment                                                  ""
-""""--Surround                                                  ""
-""""--Solarized (Color Scheme)                                  ""
+""""--EasyMotion                                                ""
 """"--Eclim                                                     ""
 """"--Emmet-Vim                                                 ""
-""""--Neomake                                                   ""
-""""--MatchIt                                                   ""
-""""--Vim-LaTeX Suite                                           ""
-""""--YouCompleteMe                                             ""
 """"--FZF                                                       ""
-""""--EasyMotion                                                ""
-""""--Vimwiki                                                   ""
+""""--MatchIt                                                   ""
+""""--Neomake                                                   ""
+""""--Restore_View                                              ""
+""""--Solarized (Color Scheme)                                  ""
+""""--Surround                                                  ""
+""""--TComment                                                  ""
+""""--Vim-LaTeX Suite                                           ""
+""""--Vundle                                                    ""
+""""--YouCompleteMe                                             ""
 """"---------------- }}}                                        ""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -33,18 +32,18 @@ endif
 call plug#begin('~/.vim/bundle')
 
 " Installs bundles
-Plug 'buftabs'
-Plug 'restore_view.vim'
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-surround'
+Plug 'Lokaltog/vim-easymotion'
 Plug 'altercation/vim-colors-solarized'
-Plug 'mattn/emmet-vim', { 'for': ['html'] }
 Plug 'benekastah/neomake', has('nvim') ? {} : { 'on': [] }
-Plug 'vim-scripts/matchit.zip'
+Plug 'buftabs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'mattn/emmet-vim', { 'for': ['html'] }
+Plug 'restore_view.vim'
 Plug 'sirver/ultisnips'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/matchit.zip'
 """""""YCM Install-----------------------------------------------{{{
 " Found on http://www.adamwadeharris.com
 function! BuildYCM(info)
