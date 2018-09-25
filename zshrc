@@ -107,6 +107,9 @@ else
 	export EDITOR="vi"
 fi
 
+# Less info
+export LESSHISTFILE="/dev/null"
+
 # History length
 SAVEHIST=10000
 HISTSIZE=10000
