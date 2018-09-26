@@ -23,6 +23,7 @@ fi
 # Essential
 source ~/.zplug/init.zsh
 
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
