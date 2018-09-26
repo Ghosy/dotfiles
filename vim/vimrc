@@ -35,11 +35,11 @@ call plug#begin('~/.vim/bundle')
 Plug 'Lokaltog/vim-easymotion'
 Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake', has('nvim') ? {} : { 'on': [] }
-Plug 'buftabs'
+Plug 'vim-scripts/buftabs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim', { 'for': ['html'] }
-Plug 'restore_view.vim'
+Plug 'vim-scripts/restore_view.vim'
 Plug 'sirver/ultisnips'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
