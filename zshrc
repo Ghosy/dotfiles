@@ -1,10 +1,15 @@
 # Init ----------------------------------------------------------- {{{
 
-autoload -U compinit promptinit
+autoload -U compinit promptinit edit-command-line
 compinit
 promptinit
 # Ensure emacs keybindings are working in terminal
 bindkey -e
+
+# Mimic bash keybind to edit current command
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
 
 # ---------------------------------------------------------------- }}}
 # Zplug ---------------------------------------------------------- {{{
