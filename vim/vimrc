@@ -4,6 +4,7 @@
 "" Source: http://goo.gl/JKMIyI                                 ""
 """"Plugins--------- {{{                                        ""
 """"--Buftabs                                                   ""
+""""--delimitMate                                               ""
 """"--EasyMotion                                                ""
 """"--Eclim                                                     ""
 """"--Emmet-Vim                                                 ""
@@ -33,17 +34,18 @@ call plug#begin('~/.vim/bundle')
 
 " Installs bundles
 Plug 'Lokaltog/vim-easymotion'
+Plug 'Raimondi/delimitMate'
 Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake', has('nvim') ? {} : { 'on': [] }
-Plug 'vim-scripts/buftabs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim', { 'for': ['html'] }
-Plug 'vim-scripts/restore_view.vim'
 Plug 'sirver/ultisnips'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
+Plug 'vim-scripts/buftabs'
 Plug 'vim-scripts/matchit.zip'
+Plug 'vim-scripts/restore_view.vim'
 """""""YCM Install-----------------------------------------------{{{
 " Found on http://www.adamwadeharris.com
 function! BuildYCM(info)
