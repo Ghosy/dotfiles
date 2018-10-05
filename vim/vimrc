@@ -4,7 +4,6 @@
 "" Source: http://goo.gl/JKMIyI                                 ""
 """"Plugins--------- {{{                                        ""
 """"--Buftabs                                                   ""
-""""--delimitMate                                               ""
 """"--EasyMotion                                                ""
 """"--Eclim                                                     ""
 """"--Emmet-Vim                                                 ""
@@ -34,7 +33,6 @@ call plug#begin('~/.vim/bundle')
 
 " Installs bundles
 Plug 'Lokaltog/vim-easymotion'
-Plug 'Raimondi/delimitMate'
 Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake', has('nvim') ? {} : { 'on': [] }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
