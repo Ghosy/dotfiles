@@ -3,6 +3,7 @@
 "" Author: Ghosy                                                ""
 "" Source: http://goo.gl/JKMIyI                                 ""
 """"Plugins--------- {{{                                        ""
+""""--ALE                                                       ""
 """"--Buftabs                                                   ""
 """"--EasyMotion                                                ""
 """"--Eclim                                                     ""
@@ -53,6 +54,7 @@ function! BuildYCM(info)
 endfunction
 """""""----------------------------------------------------------}}}
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'w0rp/ale'
 
 call plug#end()
 
