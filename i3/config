@@ -136,9 +136,7 @@ bindsym $mod+i exec urxvt -name irc -e ssh ghosy@ghosy.net -t tmux a -t irc
 bindsym $mod+m exec urxvt -name music -e ncmpcpp
 bindsym $mod+z exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/ghosy/.i3/workspace-1.json; workspace 2; append_layout /home/ghosy/.i3/workspace-2.json; workspace 3; append_layout /home/ghosy/.i3/workspace-3.json; workspace 5; append_layout /home/ghosy/.i3/workspace-5.json'''"
 
-# Should write bash script to toggle more easily
-bindsym $mod+Prior exec setxkbmap -layout us
-bindsym $mod+Next exec setxkbmap -layout dvorak
+bindsym $mod+Prior exec klayout
 
 # Add dmenu esperanto dictionary
 bindsym $mod+p exec dmenu_eo
