@@ -142,6 +142,8 @@ bindsym $mod+Prior exec klayout
 bindsym $mod+p exec dmenu_eo
 bindsym $mod+Shift+p exec dmenu_eo -m
 
+bindsym $mod+y exec eocxap -i
+
 # Laptop Fn-keys
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
