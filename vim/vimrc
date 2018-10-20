@@ -123,6 +123,7 @@ nnoremap <silent> <leader>5 :call HiInterestingWord(5)<cr>
 nnoremap <silent> <leader>6 :call HiInterestingWord(6)<cr>
 "Bind for appending modeline
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
+nnoremap <silent> <Leader>x :call ToggleXSystem()<CR>
 "Disables the arrow keys in normal and insert mode
 "Reenabled arrow keys in insert mode because of arrow location on Ergodox
 noremap   <Up>     <NOP>
@@ -314,5 +315,58 @@ function! AppendModeline()
 	call append(line("$"), l:modeline)
 endfunction
 """""""----------------------------------------------------------}}}
+"""""""X-System--------------------------------------------------{{{
+" Short script to toggle use of the X-system for Esperanto
+let g:x_system = 0
 
+function! ToggleXSystem()
+	if ! g:x_system
+		let g:x_system = 1
+
+		imap cx <BS><BS>ĉ
+		imap gx <BS><BS>ĝ
+		imap hx <BS><BS>ĥ
+		imap jx <BS><BS>ĵ
+		imap sx <BS><BS>ŝ
+		imap ux <BS><BS>ŭ
+		imap Cx <BS><BS>Ĉ
+		imap Gx <BS><BS>Ĝ
+		imap Hx <BS><BS>Ĥ
+		imap Jx <BS><BS>Ĵ
+		imap Sx <BS><BS>Ŝ
+		imap Ux <BS><BS>Ŭ
+		imap CX Cx
+		imap GX Gx
+		imap HX Hx
+		imap JX Jx
+		imap SX Sx
+		imap UX Ux
+
+		echo 'X-System enabled'
+	else
+		let g:x_system = 0
+
+		iunmap cx
+		iunmap gx
+		iunmap hx
+		iunmap jx
+		iunmap sx
+		iunmap ux
+		iunmap Cx
+		iunmap Gx
+		iunmap Hx
+		iunmap Jx
+		iunmap Sx
+		iunmap Ux
+		iunmap CX
+		iunmap GX
+		iunmap HX
+		iunmap JX
+		iunmap SX
+		iunmap UX
+
+		echo 'X-System disabled'
+	endif
+endfunction
+"""""""----------------------------------------------------------}}}
 """""------------------------------------------------------------}}}
