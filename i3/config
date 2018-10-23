@@ -147,7 +147,7 @@ bindsym $mod+p exec dmenu_eo
 bindsym $mod+Shift+p exec dmenu_eo -m
 
 bindsym $mod+y exec eocxap -i
-}}}
+# }}}
 
 # Laptop Fn-keys {{{
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
@@ -161,7 +161,7 @@ bindsym XF86AudioMicMute exec amixer -q set Capture toggle
 # Window Rules {{{
 for_window [instance="^float$"] floating enable
 for_window [class="Steam" title="Settings"] floating enable
-}}}
+# }}}
 
 # Status bar {{{
 bar {
