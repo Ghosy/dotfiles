@@ -1,6 +1,5 @@
 sanitise tridactyllocal tridactylsync
 
-guiset_quiet gui none
 guiset_quiet tabs always
 guiset_quiet navbar autohide
 
