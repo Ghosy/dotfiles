@@ -323,24 +323,18 @@ function! ToggleXSystem()
 	if ! g:x_system
 		let g:x_system = 1
 
-		imap cx <BS><BS>ĉ
-		imap gx <BS><BS>ĝ
-		imap hx <BS><BS>ĥ
-		imap jx <BS><BS>ĵ
-		imap sx <BS><BS>ŝ
-		imap ux <BS><BS>ŭ
-		imap Cx <BS><BS>Ĉ
-		imap Gx <BS><BS>Ĝ
-		imap Hx <BS><BS>Ĥ
-		imap Jx <BS><BS>Ĵ
-		imap Sx <BS><BS>Ŝ
-		imap Ux <BS><BS>Ŭ
-		imap CX Cx
-		imap GX Gx
-		imap HX Hx
-		imap JX Jx
-		imap SX Sx
-		imap UX Ux
+		imap cx ĉ
+		imap gx ĝ
+		imap hx ĥ
+		imap jx ĵ
+		imap sx ŝ
+		imap ux ŭ
+		imap Cx Ĉ
+		imap Gx Ĝ
+		imap Hx Ĥ
+		imap Jx Ĵ
+		imap Sx Ŝ
+		imap Ux Ŭ
 
 		echo 'X-System enabled'
 	else
@@ -358,12 +352,6 @@ function! ToggleXSystem()
 		iunmap Jx
 		iunmap Sx
 		iunmap Ux
-		iunmap CX
-		iunmap GX
-		iunmap HX
-		iunmap JX
-		iunmap SX
-		iunmap UX
 
 		echo 'X-System disabled'
 	endif
