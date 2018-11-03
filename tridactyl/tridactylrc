@@ -1,21 +1,41 @@
 sanitise tridactyllocal tridactylsync
 
-guiset_quiet tabs always
+" Appearance {{{
+
 guiset_quiet navbar autohide
+guiset_quiet tabs always
+
+set theme dark
+
+" }}}
+
+" Behaviour {{{
 
 set hintchars aoeuidhtns
-set theme dark
 set allowautofous false
-set searchengine duckduckgo
 
+" }}}
+
+" Search Stuff {{{
+set searchengine duckduckgo
 unset searchurls
 searchsetkeyword yt https://www.youtube.com/results?search_query=%s
 searchsetkeyword g https://www.google.com/search?q=%s
 searchsetkeyword py https://docs.python.org/3/search.html?q=%s&check_keywords=yes&area=default
 
+" }}}
+
+" Keybinds {{{
+
 bind J tabprev
 bind K tabnext
+
+" }}}
+
+" Misc {{{
 
 " Make Tridactyl work on more sites at the expense of some security
 set csp clobber
 fixamo_quiet
+
+"}}}
