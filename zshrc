@@ -83,6 +83,14 @@ if hash vifm 2>/dev/null; then
 	alias o="\vifm"
 fi
 
+svn() {
+	if [ "$1" = diff ]; then
+		shift
+		set -- diff --diff-cmd colordiff "$@"
+	fi
+	command svn "$@"
+}
+
 # If WSL
 if [[ "$(uname -r 2> /dev/null)" =~ ".*-Microsoft" ]]; then
 	# TODO: Update to use variables
