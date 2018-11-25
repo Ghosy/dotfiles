@@ -9,6 +9,7 @@
 """"--Eclim                                                     ""
 """"--Emmet-Vim                                                 ""
 """"--FZF                                                       ""
+""""--Indent-Guides
 """"--MatchIt                                                   ""
 """"--Neomake                                                   ""
 """"--Restore_View                                              ""
@@ -55,6 +56,7 @@ endfunction
 """""""----------------------------------------------------------}}}
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'w0rp/ale'
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 
