@@ -97,6 +97,16 @@ hi link EasyMotionTarget2Second Search
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" Set display settings for indent guides
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+" Set colors for indent guides
+let g:indent_guides_auto_colors = 0
+
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=black
+
 """""------------------------------------------------------------}}}
 """""Keybinds----------------------------------------------------{{{
 
