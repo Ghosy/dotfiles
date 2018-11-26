@@ -81,13 +81,16 @@ set cmdheight=2 "Sets the space at the bottom of the terminal 2 characters high
 set cul " Highlights current line
 set showmatch " Shows matching bracket
 set list "Makes whitespace characters visible
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮ "Defines characters for whitespace
+set listchars=tab:¦\ ,eol:¬,extends:❯,precedes:❮ "Defines characters for whitespace
 set hlsearch "Highlights the term searched
 set foldtext=MyFoldText() "Sets template for foldtext
 set viewoptions=cursor,folds,slash,unix "Saves view info for reloading later
 set tabstop=8 "Length TAB's appear to be
 set shiftwidth=8 "Width of an indent
 set softtabstop=8 "Sets number of columns for a TAB
+
+" Don't highlight special chars
+hi SpecialKey ctermbg=none
 
 " Easy motion highlighting colors, which work with solarized
 hi link EasyMotionTarget Search
@@ -103,7 +106,6 @@ let g:indent_guides_guide_size = 1
 
 " Set colors for indent guides
 let g:indent_guides_auto_colors = 0
-
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=black
 
@@ -125,7 +127,7 @@ noremap <F4> :bnext<CR>
 nnoremap n nzzzv
 nnoremap N Nzzzv
 "Removes matches from screen
-nnoremap <leader><space> :noh<CR>:call clearmatches()<CR>
+nnoremap <leader><space> :noh<CR>:call ClearMatchesCompat()<CR>
 "Binds for highlighting words
 nnoremap <silent> <leader>1 :call HiInterestingWord(1)<cr>
 nnoremap <silent> <leader>2 :call HiInterestingWord(2)<cr>
@@ -201,6 +203,19 @@ call matchadd('ColorColumn', '\%81v', 100)
 
 """""------------------------------------------------------------}}}
 """""Functions---------------------------------------------------{{{
+"""""""Clear Matches Compatibility Mode--------------------------{{{
+"
+" A simple function that keeps certain highlights, while removing all others
+
+function! ClearMatchesCompat()
+	silent! call clearmatches()
+
+	" Restore indent guides if enabled
+	if g:indent_guides_autocmds_enabled == 1
+		silent! call indent_guides#enable()
+	endif
+endfunction
+"""""""----------------------------------------------------------}}}
 """""""Highlight Word--------------------------------------------{{{
 "
 " This mini-plugin provides a few mappings for highlighting words temporarily.
