@@ -90,6 +90,9 @@ set shiftwidth=8 "Width of an indent
 set softtabstop=8 "Sets number of columns for a TAB
 set colorcolumn=0 "Color column off by default
 
+" Set spell check colors
+highlight SpellBad cterm=underline ctermbg=196 ctermfg=white
+
 " Don't highlight special chars
 hi SpecialKey ctermbg=none
 
@@ -202,7 +205,6 @@ let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:EclimCompletionMethod = 'omnifunc'
 set grepprg=grep\ -nH\ $*
-highlight SpellBad cterm=underline ctermbg=196 ctermfg=white
 
 """""------------------------------------------------------------}}}
 """""Functions---------------------------------------------------{{{
