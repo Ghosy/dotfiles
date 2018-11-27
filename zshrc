@@ -91,8 +91,10 @@ svn() {
 	if [ "$1" = diff ]; then
 		shift
 		set -- diff --diff-cmd colordiff "$@"
+		command svn "$@" | less -rMF
+	else
+		command svn "$@"
 	fi
-	command svn "$@"
 }
 
 # If WSL
