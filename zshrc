@@ -91,7 +91,7 @@ svn() {
 	if [ "$1" = diff ]; then
 		shift
 		set -- diff --diff-cmd colordiff "$@"
-		command svn "$@" | less -rMF
+		command svn "$@" | less -rM
 	else
 		command svn "$@"
 	fi
