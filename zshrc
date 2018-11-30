@@ -17,14 +17,13 @@ bindkey '^x^e' edit-command-line
 
 # ---------------------------------------------------------------- }}}
 # Zplug ---------------------------------------------------------- {{{
-# Zplug code is default from zplug repo on github
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
 	git clone https://github.com/zplug/zplug ~/.zplug
 	source ~/.zplug/init.zsh && zplug update --self
 fi
 
-# Essential
+# Essential for zplug
 source ~/.zplug/init.zsh
 
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
@@ -91,7 +90,7 @@ svn() {
 	if [ "$1" = diff ]; then
 		shift
 		set -- diff --diff-cmd colordiff "$@"
-		command svn "$@" | less -rMF
+		command svn "$@" | less -rM
 	else
 		command svn "$@"
 	fi
