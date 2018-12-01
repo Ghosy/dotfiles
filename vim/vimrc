@@ -9,7 +9,7 @@
 """"--Eclim                                                     ""
 """"--FZF                                                       ""
 """"--Indent-Guides                                             ""
-""""--MatchIt                                                   ""
+""""--MatchUp                                                   ""
 """"--Neomake                                                   ""
 """"--Restore_View                                              ""
 """"--Solarized (Color Scheme)                                  ""
@@ -42,7 +42,6 @@ Plug 'sirver/ultisnips'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/buftabs'
-Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/restore_view.vim'
 """""""YCM Install-----------------------------------------------{{{
 " Found on http://www.adamwadeharris.com
@@ -55,6 +54,7 @@ endfunction
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'w0rp/ale'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'andymass/vim-matchup'
 
 call plug#end()
 
