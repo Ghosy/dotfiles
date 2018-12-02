@@ -203,6 +203,8 @@ let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:EclimCompletionMethod = 'omnifunc'
 set grepprg=grep\ -nH\ $*
+let g:matchup_transmute_enabled = 0 "Don't change anything when changing one tag
+let g:matchup_matchparen_status_offscreen = 0 "Don't show matching tag in statusbar
 
 """""------------------------------------------------------------}}}
 """""Functions---------------------------------------------------{{{
