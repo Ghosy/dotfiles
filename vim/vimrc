@@ -120,9 +120,11 @@ map H ^
 "Easier movement to end of line
 map L $
 "Unbinds help from F1
-nmap <F1> <nop>
-map <F1> <Esc>
-imap <F1> <Esc>
+nnoremap <F1> <NOP>
+noremap <F1> <Esc>
+inoremap <F1> <Esc>
+"Unbind Ex Mode
+nnoremap Q <NOP>
 "Easier buffer movement
 noremap <F3> :bprev<CR>
 noremap <F4> :bnext<CR>
