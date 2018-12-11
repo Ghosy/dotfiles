@@ -30,7 +30,7 @@ searchsetkeyword py https://docs.python.org/3/search.html?q=%s&check_keywords=ye
 bind J tabprev
 bind K tabnext
 
-unbind <F1> "Save me from help hell
+unbind <F1>
 
 " }}}
 
