@@ -2,6 +2,7 @@ sanitise tridactyllocal tridactylsync
 
 " Appearance {{{
 
+" Only show tabs
 guiset_quiet navbar autohide
 guiset_quiet tabs always
 
@@ -11,12 +12,14 @@ set theme dark
 
 " Behaviour {{{
 
+" Adapt hint characers to dvorak
 set hintchars aoeuidhtns
 set allowautofous false
 
 " }}}
 
 " Search Stuff {{{
+
 set searchengine duckduckgo
 unset searchurls
 searchsetkeyword yt https://www.youtube.com/results?search_query=%s
