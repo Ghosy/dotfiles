@@ -25,6 +25,7 @@ unset searchurls
 searchsetkeyword yt https://www.youtube.com/results?search_query=%s
 searchsetkeyword g https://www.google.com/search?q=%s
 searchsetkeyword py https://docs.python.org/3/search.html?q=%s&check_keywords=yes&area=default
+searchsetkeyword st https://stackoverflow.com/search?q=%s
 
 " }}}
 
