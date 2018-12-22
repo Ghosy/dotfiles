@@ -1,12 +1,7 @@
 # Init ----------------------------------------------------------- {{{
 
 autoload -Uz promptinit compinit edit-command-line
-if [[ -n ${ZDOTDIR:-${HOME}}/.zcompdump(#qN.mh+24) ]]; then
-	compinit;
-else
-	compinit -C;
-fi;
-promptinit
+compinit; promptinit
 # Ensure emacs keybindings are working in terminal
 bindkey -e
 
