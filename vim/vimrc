@@ -191,13 +191,13 @@ let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips", "UltiSnips"]
 set lazyredraw "Redraw only when it has to
 set undolevels=1000 "1000 undos
 set ttyfast "Gotta go fast
-set foldmethod=marker
+set foldmethod=marker "Set default fold method to use marker
 set ignorecase "Ignores caps in searches
 set smartcase "Pays attention to caps you add only
 set clipboard=unnamedplus "Allows for use of the system clipboard in Unix-based systems
-set spelllang=en_us
-set wildmode=longest,list,full
-set wildmenu
+set spelllang=en_us "Set spellchecking language
+set wildmode=longest,list,full "Modes for wildmenu
+set wildmenu "Enhanced command-line completion
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 set grepprg=grep\ -nH\ $*
