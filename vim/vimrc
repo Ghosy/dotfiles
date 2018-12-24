@@ -86,7 +86,7 @@ set softtabstop=8 "Sets number of columns for a TAB
 set colorcolumn=0 "Color column off by default
 
 " Set spell check colors
-highlight SpellBad cterm=underline ctermbg=196 ctermfg=white
+hi SpellBad cterm=underline ctermbg=196 ctermfg=white
 
 " Don't highlight special chars
 hi SpecialKey ctermbg=none
@@ -207,7 +207,6 @@ let g:matchup_matchparen_status_offscreen = 0 "Don't show matching tag in status
 """""------------------------------------------------------------}}}
 """""Functions---------------------------------------------------{{{
 """""""Clear Matches Compatibility Mode--------------------------{{{
-"
 " A simple function that keeps certain highlights, while removing all others
 
 function! ClearMatchesCompat()
@@ -220,7 +219,6 @@ function! ClearMatchesCompat()
 endfunction
 """""""----------------------------------------------------------}}}
 """""""Highlight Word--------------------------------------------{{{
-"
 " This mini-plugin provides a few mappings for highlighting words temporarily.
 "
 " Sometimes you're looking at a hairy piece of code and would like a certain
@@ -253,6 +251,7 @@ hi def InterestingWord5 guifg=#000000 ctermfg=16 guibg=#ff9eb8 ctermbg=211
 hi def InterestingWord6 guifg=#000000 ctermfg=16 guibg=#ff2c4b ctermbg=195
 """""""----------------------------------------------------------}}}
 """""""FoldText--------------------------------------------------{{{
+" Function defining how fold text is displayed
 
 function! MyFoldText()
 	let line = getline(v:foldstart)
@@ -269,6 +268,7 @@ endfunction
 
 """""""----------------------------------------------------------}}}
 """""""Spell Toggle----------------------------------------------{{{
+" Toggle spell checker on and off
 
 function SpellToggle()
 	if &spell == 1
@@ -280,6 +280,7 @@ endfunction
 
 """""""----------------------------------------------------------}}}
 """""""Number Toggle---------------------------------------------{{{
+"Toggle the number line from relative to simple line numbers
 
 function NuToggle()
 	if &rnu == 0
