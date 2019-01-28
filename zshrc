@@ -93,8 +93,9 @@ svn() {
 
 # If WSL
 if [[ "$(uname -r 2> /dev/null)" =~ ".*-Microsoft" ]]; then
-	# TODO: Update to use variables
-	alias whome="cd /mnt/c/Users/ZMatthews/"
+	whome=$(wslpath -u $(cmd.exe /c "echo %USERPROFILE%"))
+	WHOME=${whome//$'\r'}
+	alias whome="cd $WHOME"
 fi
 
 # ---------------------------------------------------------------- }}}
