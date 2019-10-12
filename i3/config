@@ -134,7 +134,7 @@ bindsym $mod+n mode "resize"
 
 # Non-WM Keybinds {{{
 # screenshot whole screen
-bindsym --release Print exec scrot -e 'mv $f ~/Pictures/screenshots/'
+bindsym --release Print exec scrot -e 'mv $f ~/Pictures/screenshots/' && aplay ~/.config/shutter.wav
 
 bindsym $mod+i exec urxvt -name irc -e ssh ghosy@ghosy.net -t tmux a -t irc
 bindsym $mod+m exec urxvt -name music -e ncmpcpp
