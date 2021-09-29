@@ -164,6 +164,9 @@ nmap <leader>s :call SpellToggle()<CR>
 nmap <Leader>f :call <SID>ToggleFold()<CR>
 nmap <Leader>l :call ToggleColorColumn(80)<CR>
 
+"Beautify JSON
+nmap <Leader>j :%!jq '.'<CR>
+
 "UltiSnips binds
 if !exists("g:UltiSnipsJumpForwardTrigger")
   let g:UltiSnipsJumpForwardTrigger = "<tab>"
