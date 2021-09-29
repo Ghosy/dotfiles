@@ -128,6 +128,8 @@ nnoremap Q <NOP>
 "Easier buffer movement
 noremap <F3> :bprev<CR>
 noremap <F4> :bnext<CR>
+"Remove all trailing whitespace
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>w
 "Keeps matching term in the center of the screen
 nnoremap n nzzzv
 nnoremap N Nzzzv
